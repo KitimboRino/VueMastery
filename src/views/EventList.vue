@@ -74,7 +74,7 @@ export default {
   align-items: center;
 }
 
-.pagination{
+.pagination {
   display: flex;
   width: 290px;
 }
@@ -85,7 +85,11 @@ export default {
   color: #2c3e50;
 }
 
-#page-prev{
-  text-align:right;
+#page-prev {
+  text-align: left;
+}
+
+#page-next {
+  text-align: right;
 }
 </style>
