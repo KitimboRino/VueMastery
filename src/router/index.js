@@ -16,7 +16,7 @@ const routes = [
     props: route => ({ page: parseInt(route.query.page) || 1 })
   },
   {
-    path: "/event/:id",
+    path: "/events/:id",
     name: "EventLayout",
     props: true,
     component: EventLayout,
@@ -38,7 +38,13 @@ const routes = [
       },
     ]
   },
-
+  // Redirect for both nested and unnested routes
+  {
+    path: '/event/:afterEvent(.*)',
+    redirect: to => {
+      return { path: '/events/' + to.params.afterEvent }
+    },
+  },
   {
     path: "/about",
     name: "About",
